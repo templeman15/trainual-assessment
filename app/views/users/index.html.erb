@@ -20,7 +20,7 @@
       <td><%= user.email %></td>
       <td><%= user.title %></td>
       <td><%= user.phone %></td>
-      <td><%= user.status %></td>
+      <td class=<%= "#{status_color(user)}" %>><%= user.status %></td>
     </tr>
   <% end %>
   </tbody>

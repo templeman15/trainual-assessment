@@ -1,14 +1,19 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the UsersHelper. For example:
-#
-# describe UsersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe UsersHelper, type: :helper do
+  describe '#status_color' do
+    subject { FactoryBot.build(:user) }
+
+    context 'when users status is active' do
+      before { subject.status = :active }
+
+      it { expect(helper.status_color(subject)).to eq('text-success') }
+    end
+
+    context 'when users status is inactive' do
+      before { subject.status = :inactive }
+
+      it { expect(helper.status_color(subject)).to eq('text-danger') }
+    end
+  end
 end

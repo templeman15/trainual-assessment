@@ -23,18 +23,21 @@
     <th scope="col"><%= sort_link(@search, :title, {}, class: 'text-white') %></th>
     <th scope="col"><%= sort_link(@search, :phone, {}, class: 'text-white') %></th>
     <th scope="col"><%= sort_link(@search, :status, {}, class: 'text-white') %></th>
+    <th scope="col">Actions</th>
   </tr>
   </thead>
 
   <tbody>
   <% @users.each do |user| %>
-    <tr>
+    <tr id=<%= "row_#{user.id}" %>>
       <td><%= user.updated_at.strftime("%m/%d/%Y - %I:%M%p") %></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.title %></td>
       <td><%= user.phone %></td>
       <td class=<%= "#{status_color(user)}" %>><%= user.status %></td>
+      <td><u><%= link_to 'Delete' , user, data: { confirm: 'Are you sure you want to delete this user?' }, method: :delete,
+                      remote: true, class: 'text-white' %></u></td>
     </tr>
   <% end %>
   </tbody>

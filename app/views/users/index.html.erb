@@ -1,14 +1,28 @@
-<h1>Users</h1>
+<div class="row">
+  <div class="col-md-9">
+    <h1>Users</h1>
+  </div>
+  <div class="col-md-3">
+    <%= search_form_for @search do |f| %>
+      <div class="input-group mt-2">
+        <%= f.text_field :search_cont, placeholder: 'Name/Email/Phone', class: 'form-control' %>
+        <div class="input-group-append">
+          <%= f.submit 'Search', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <table class="table table-dark table-striped table-hover">
   <thead>
   <tr>
-    <th scope="col">Last Updated</th>
-    <th scope="col">Name</th>
-    <th scope="col">Email</th>
-    <th scope="col">Title</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Status</th>
+    <th scope="col"><%= sort_link(@search, :updated_at, 'Last Updated', {}, class: 'text-white') %></th>
+    <th scope="col"><%= sort_link(@search, :name, {}, class: 'text-white') %></th>
+    <th scope="col"><%= sort_link(@search, :email, {}, class: 'text-white') %></th>
+    <th scope="col"><%= sort_link(@search, :title, {}, class: 'text-white') %></th>
+    <th scope="col"><%= sort_link(@search, :phone, {}, class: 'text-white') %></th>
+    <th scope="col"><%= sort_link(@search, :status, {}, class: 'text-white') %></th>
   </tr>
   </thead>
 

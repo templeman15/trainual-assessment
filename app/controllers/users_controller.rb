@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @users = pagy(User.all)
+    @search = User.ransack(params[:q])
+    @pagy, @users = pagy(@search.result(distinct: true))
   end
 end

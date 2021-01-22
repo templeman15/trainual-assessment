@@ -1,0 +1,6 @@
+<% if @user.errors.empty? %>
+  $("#modal-window").modal('toggle');
+  $('tbody').prepend('<%= j render partial: 'row', locals: { user: @user }%>')
+<% else %>
+  $('.errors').html('<%= j(render :partial => 'shared/error_messages', locals: { object: @user }) %>')
+<% end %>

@@ -17,5 +17,14 @@
     <%= f.phone_field :phone, class: 'form-control', placeholder: 'Phone', required: true %>
   </div>
 
+  <% if user.id.present? %>
+    <div class="form-check mb-3">
+      <% User.statuses.keys.each do |status| %>
+        <%= f.radio_button :status, status, class: 'form-check-input' %>
+        <%= f.label status.to_sym, class: 'form-check-label mr-5' %>
+      <% end %>
+    </div>
+  <% end %>
+
   <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
 <% end %>

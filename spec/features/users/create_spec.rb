@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 describe 'Create a User', type: :feature do
-  let!(:user1) { FactoryBot.create(:user, name: 'Jared') }
-  let!(:user2) { FactoryBot.create(:user, name: 'Matt') }
-
   describe 'User saving successfully' do
     scenario 'Saves without validation errors', js: true do
       visit root_path
@@ -21,7 +18,7 @@ describe 'Create a User', type: :feature do
   end
 
   describe 'Validation errors' do
-    let!(:user3) { FactoryBot.create(:user, email: 'steven@trainual.com') }
+    let!(:user) { FactoryBot.create(:user, email: 'steven@trainual.com') }
 
     scenario 'Fails to save with validation errors', js: true do
 

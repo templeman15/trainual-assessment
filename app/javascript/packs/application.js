@@ -12,6 +12,8 @@ require.context('../images', true)
 import 'bootstrap'
 import '../stylesheets/application.scss'
 
+global.$ = require("jquery")
+
 document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()

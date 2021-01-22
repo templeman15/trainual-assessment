@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trainual Engineering Assessment
 
-Things you may want to cover:
+* To run specs run: 
+`bundle exec rspec`
 
-* Ruby version
+Wish list if time permitted:
 
-* System dependencies
+- Rubocop adherence 
+- Phone number validation
+- Move formatting of date into helper
+- Responsive design
+- Display initial icon on which column is sorted by default
+- Inserting record in correct position upon creation based off column sorting, right now it inserts it index 0 of the table
 
-* Configuration
+Suggestions
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Accessing instructions on engineering assessment through Trainual platform would have been cool

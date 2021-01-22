@@ -5,6 +5,10 @@
   <td><%= user.title %></td>
   <td><%= user.phone %></td>
   <td class=<%= "#{status_color(user)}" %>><%= user.status %></td>
-  <td><u><%= link_to 'Delete' , user, data: { confirm: 'Are you sure you want to delete this user?' }, method: :delete,
-                     remote: true, class: 'text-white' %></u></td>
+  <td>
+    <u><%= link_to 'Delete' , user, data: { confirm: 'Are you sure you want to delete this user?' }, method: :delete,
+                   remote: true, class: 'text-white' %></u>
+    <u><%= link_to 'Edit', edit_user_path(user), { remote: true, 'data-toggle':  'modal', 'data-target': '#modal-window',
+                                                   class: 'text-white'} %></u>
+  </td>
 </tr>

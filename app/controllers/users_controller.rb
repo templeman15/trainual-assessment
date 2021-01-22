@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: %w[destroy]
+  before_action :find_user, only: %w[destroy edit update]
   include Pagy::Backend
 
   def index
@@ -11,9 +11,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit; end
+
   def create
     @user = User.new(user_params)
     @user.save
+  end
+
+  def update
+    @user.update(user_params)
   end
 
   def destroy

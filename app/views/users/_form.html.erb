@@ -1,0 +1,21 @@
+<%= form_for user, remote: true do |f| %>
+  <div class="errors"></div>
+
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.email_field :email, class: 'form-control', placeholder: 'Email', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.phone_field :phone, class: 'form-control', placeholder: 'Phone', required: true %>
+  </div>
+
+  <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
+<% end %>

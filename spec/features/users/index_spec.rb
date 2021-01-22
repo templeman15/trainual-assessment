@@ -21,7 +21,7 @@ describe 'Visiting users index', type: :feature do
   describe 'Searching users' do
     let!(:user1) { FactoryBot.create(:user, name: 'Steven') }
     let!(:user2) { FactoryBot.create(:user, name: 'Matt') }
-    let!(:user3) { FactoryBot.create(:user, name: 'Jerad') }
+    let!(:user3) { FactoryBot.create(:user, name: 'Jared') }
     let!(:user4) { FactoryBot.create(:user, name: 'Zach') }
 
     scenario 'Searching by name' do
@@ -71,7 +71,7 @@ describe 'Visiting users index', type: :feature do
   describe 'Sorting users' do
     let!(:user1) { FactoryBot.create(:user, name: 'Steven', email: '3_steven@gmail.com') }
     let!(:user2) { FactoryBot.create(:user, name: 'Matt', email: '1_matt@gmail.com') }
-    let!(:user3) { FactoryBot.create(:user, name: 'Jerad', email: '4_jerad@gmail.com') }
+    let!(:user3) { FactoryBot.create(:user, name: 'Jared', email: '4_jared@gmail.com') }
     let!(:user4) { FactoryBot.create(:user, name: 'Zach', email: '2_zach@gmail.com') }
 
     scenario 'Sorting by name' do

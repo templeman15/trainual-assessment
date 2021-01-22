@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Create a User', type: :feature do
-  let!(:user1) { FactoryBot.create(:user, name: 'Jerad') }
+  let!(:user1) { FactoryBot.create(:user, name: 'Jared') }
   let!(:user2) { FactoryBot.create(:user, name: 'Matt') }
 
   describe 'User saving successfully' do

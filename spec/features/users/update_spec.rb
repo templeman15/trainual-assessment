@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 describe 'Update a User', type: :feature do
-  let!(:user1) { FactoryBot.create(:user, name: 'Jerad', email: 'jerad@trainual.com') }
+  let!(:user1) { FactoryBot.create(:user, name: 'Jared', email: 'jared@trainual.com') }
 
   describe 'User saving successfully' do
     scenario 'Saves without validation errors', js: true do
       visit root_path
 
-      expect(page).to have_content('Jerad')
+      expect(page).to have_content('Jared')
 
       click_link('Edit')
       fill_in('Name', with: 'Steven')

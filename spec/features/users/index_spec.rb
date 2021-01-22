@@ -7,7 +7,6 @@ describe 'Visiting users index', type: :feature do
     scenario 'Visiting the first page of users' do
       visit root_path
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 25)
     end
 
@@ -15,7 +14,6 @@ describe 'Visiting users index', type: :feature do
       visit root_path
       click_link('2')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 5)
     end
   end
@@ -31,7 +29,6 @@ describe 'Visiting users index', type: :feature do
       fill_in('Name/Email/Phone', with: user1.name)
       click_button('Search')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 1)
       expect(page).to have_content user1.name
     end
@@ -41,7 +38,6 @@ describe 'Visiting users index', type: :feature do
       fill_in('Name/Email/Phone', with: user2.email)
       click_button('Search')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 1)
       expect(page).to have_content user2.email
     end
@@ -51,7 +47,6 @@ describe 'Visiting users index', type: :feature do
       fill_in('Name/Email/Phone', with: user3.phone)
       click_button('Search')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 1)
       expect(page).to have_content user3.phone
     end
@@ -61,7 +56,6 @@ describe 'Visiting users index', type: :feature do
       fill_in('Name/Email/Phone', with: 'No matching record')
       click_button('Search')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 0)
     end
 
@@ -70,7 +64,6 @@ describe 'Visiting users index', type: :feature do
       fill_in('Name/Email/Phone', with: '')
       click_button('Search')
 
-      expect(page).to have_content 'Users'
       expect(page).to have_selector('table tbody tr', count: 4)
     end
   end
